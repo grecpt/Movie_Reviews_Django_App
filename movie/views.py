@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Movie
 
 # Create your views here.
 from django.shortcuts import render
@@ -6,9 +7,10 @@ from django.http import HttpResponse
 
 def home(request):
     searchTerm = request.GET.get('searchMovie')
+    movies = Movie.objects.all()
     return render(request, 'home.html', 
-                  {'searchTerm':searchTerm})
-
+                  {'searchTerm':searchTerm, 'movies':
+                   movies})
 def about(request):
     return HttpResponse('<h1>Welcome to About Page</h1>')
 
