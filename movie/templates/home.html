@@ -10,8 +10,8 @@
     </script>
 </head>
 <body>
-
-    <div class="container">
+        {% extends 'base.html' %}
+        {%  block content %}
         <form action="">
             <div class="mb-3">
               <label for="searchMovie" class="form-label">Search for Movie:</label>
@@ -48,5 +48,6 @@
             </div>
           </form>
     </div>
+    {% endblock content  %}
 </body>
 </html>
