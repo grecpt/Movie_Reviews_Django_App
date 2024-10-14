@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import Movie
 
 # Create your views here.
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import get_list_or_404
 
 def home(request):
     searchTerm = request.GET.get('searchMovie')
@@ -18,3 +18,7 @@ def about(request):
 def signup(request):
     email = request.GET.get('email')
     return render(request, 'signup.html', {'email':email})
+
+def detail(request_movie_id):
+    movie = get_list_or_404(Movie,pk=movie_id)
+    return render(request,'detail.html',{'movie':movie})
