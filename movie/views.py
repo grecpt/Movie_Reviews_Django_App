@@ -19,6 +19,6 @@ def signup(request):
     email = request.GET.get('email')
     return render(request, 'signup.html', {'email':email})
 
-def detail(request_movie_id):
+def detail(request, movie_id):
     movie = get_list_or_404(Movie,pk=movie_id)
     return render(request,'detail.html',{'movie':movie})
