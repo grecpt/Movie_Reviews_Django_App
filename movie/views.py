@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from .models import Movie
-
-# Create your views here.
 from django.http import HttpResponse
 from django.shortcuts import get_list_or_404
 
+# Create your views here.
 def home(request):
     searchTerm = request.GET.get('searchMovie')
     if searchTerm:
